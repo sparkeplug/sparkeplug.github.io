@@ -1,0 +1,22 @@
+{
+  "name": "prowareness",
+  "description": "Build a small UI page which displays the contents as given in task",
+  "main": "index.html",
+  "authors": [
+    "Prabhu Ram Kumar B"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.3",
+    "bootstrap": "^3.3.7"
+  }
+}

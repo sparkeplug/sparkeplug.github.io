@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+export NODE_PATH=/home/sparke/Prowareness/.environment/lib/node_modules
+export NPM_CONFIG_PREFIX=/home/sparke/Prowareness/.environment
+export npm_config_prefix=/home/sparke/Prowareness/.environment
+exec .environment/bin/node "$@"

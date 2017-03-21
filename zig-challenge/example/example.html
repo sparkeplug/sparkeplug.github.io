@@ -1,0 +1,17 @@
+<!doctype html>
+<html ng-app="zigChallenge">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+	<script src="example.js"></script>
+	<link rel="stylesheet" href="example.css">
+</head>
+<body>
+<h2>Zig challenge</h2>
+<div ng-controller="splitController as list">
+	<image-card ng-repeat="image in list.images" image="image"></image-card>
+	<link-card ng-repeat="link in list.links" link="link"></link-card>
+	<text-card ng-repeat="text in list.texts" text="text"></text-card>
+</div>
+
+</body>
+</html>
