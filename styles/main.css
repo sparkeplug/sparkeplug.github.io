@@ -4,6 +4,10 @@ h1,h2,h3,h4,h5,h6{
   margin: 10px;
 }
 
+#app-header,#app-body{
+  padding: 30px;
+}
+
 a {
     transition: 0.2s;
     color: black;
@@ -65,15 +69,40 @@ a:hover
     border-radius: 20%;
 }
 
-.panel-default{
+#accordion-pinnedItems .panel-default{
+    border: 2px solid darkgrey;
+    box-shadow: 2px 2px 10px black;
+    transform: scale(1.005,1.02);
   -webkit-transition: all 2s;
     transition: all 0.2s;
     transition-timing-function: ease-in-out;
 }
 
-.panel-default:hover {
-    box-shadow: 1px 1px 10px grey;
-    transform: scale(1.02,1.05);
+#accordion-pinnedItems .panel-default:hover {
+    transform: scale(1.04,1.07);
+}
+
+#accordion-widgetData .panel-default{
+  border: 1px solid lightgrey;
+ -webkit-transition: all 2s;
+   transition: all 0.2s;
+   transition-timing-function: ease-in-out;
+}
+
+#accordion-widgetData .panel-default:hover {
+   box-shadow: 1px 1px 10px grey;
+   transform: scale(1.02,1.05);
+}
+
+.panel-group{
+  margin: 0;
+}
+
+.scale:hover{
+  transition: all 0.5s;
+  transition-timing-function: ease-in-out;
+  box-shadow: 1px 1px 10px grey;
+  transform: scale(1.02,1.05);
 }
 
 .panel-defaut:click{
