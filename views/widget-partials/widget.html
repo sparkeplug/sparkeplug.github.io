@@ -1,20 +1,31 @@
 <div class="panel-group" id="accordion">
   <div class="panel panel-default" ng-repeat="data in widgetData">
-    <div class="panel-heading">
-      <div id="row-image" class="make-inline center-vertical img-crop" style="background-image: url({{data.href}});">
-      </div>
-      <h4 id="widget-heading" ng-if="data.name" class="make-inline"><a data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index}}">{{data.name}}</a></h4>
-      <h4 id="widget-heading" ng-if="!data.name" class="make-inline"><a data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index}}">Name not available</a></h4>
-      <div id="icons" class="pull-right">
-        <img class="icon-size margin" src="../../images/icons/002-rubbish-bin.svg" alt="delete" />
-        <img class="icon-size border" src="../../images/icons/001-push-pin.svg" alt="pin"/>
+    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index}}">
+      <div ng-if="data.type === 'text'" id="row-image" class="make-inline center-vertical img-crop" style="background-image: url('../../images/icons/001-text.svg');"></div>
+      <div ng-if="data.type === 'image'" id="row-image" class="make-inline center-vertical img-crop" style="background-image: url('../../images/icons/002-picture.svg');"></div>
+      <div ng-if="data.type === 'link'" id="row-image" class="make-inline center-vertical img-crop" style="background-image: url('../../images/icons/003-chains.svg');"></div>
+      <h4 id="widget-heading" ng-if="data.name" class="make-inline">{{data.name}}</h4>
+      <div id="icons" class="pull-right center-vertical">
+        <img class="icon-size margin" src="../../images/icons/002-rubbish-bin.svg" alt="delete" ng-click="delete(data)"/>
+        <img class="icon-size border" src="../../images/icons/001-push-pin.svg" alt="pin" ng-click="pin(this)"/>
       </div>
     </div>
     <div id="collapse{{$index}}" class="panel-collapse collapse">
       <div class="panel-body">
-          <p>
-            {{data.description}}
-          </p>
+          <div class="w-image" ng-if="data.type === 'image'">
+            <img src="{{data.href}}" alt="Image unavailable" />
+          </div>
+          <div class="w-text" ng-if="data.type === 'text'">
+            <p>
+              {{data.body}}
+            </p>
+          </div>
+          <div class="w-link" ng-if="data.type === 'link'">
+            <p>
+              {{data.description}}
+            </p>
+            <a href="{{data.href}}"><strong>{{data.href}}</strong></a>
+          </div>
       </div>
     </div>
   </div>

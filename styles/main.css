@@ -12,7 +12,7 @@ a {
 
 a:hover
 {
-     color:grey;
+     color:#4286f4;
 }
 
 .padding{
@@ -53,11 +53,11 @@ a:hover
     background-size:cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
+    -webkit-border-radius: 20%;
+    -moz-border-radius: 20%;
+    -ms-border-radius: 20%;
+    -o-border-radius: 20%;
+    border-radius: 20%;
 }
 
 .center-vertical{
@@ -68,10 +68,16 @@ a:hover
 
 .panel-heading{
   height:60px !important;
+  cursor: pointer;
 }
 
 .panel-group .panel+.panel{
   margin-top: 0px;
+}
+
+.panel panel-default{
+  position: relative;
+  transition: 1s;
 }
 
 #widget-heading{
