@@ -1,17 +1,21 @@
-<div class="widget">
-  <div class="widget-row" ng-repeat="data in widgetData">
-    <div class="row-header">
-      <div class="row-image">
-
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default" ng-repeat="data in widgetData">
+    <div class="panel-heading">
+      <div id="row-image" class="make-inline center-vertical img-crop" style="background-image: url({{data.href}});">
       </div>
-      <h3><strong>{{data.name}}</strong></h3>
-      <div class="icons pull-right">
-        <span class="glyphicon glyphicon-trash"></span>
-        <span class="glyphicon glyphicon-pushpin"></span>
+      <h4 id="widget-heading" ng-if="data.name" class="make-inline"><a data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index}}">{{data.name}}</a></h4>
+      <h4 id="widget-heading" ng-if="!data.name" class="make-inline"><a data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index}}">Name not available</a></h4>
+      <div id="icons" class="pull-right">
+        <img class="icon-size margin" src="../../images/icons/002-rubbish-bin.svg" alt="delete" />
+        <img class="icon-size border" src="../../images/icons/001-push-pin.svg" alt="pin"/>
       </div>
     </div>
-    <div class="row-description">
-
+    <div id="collapse{{$index}}" class="panel-collapse collapse">
+      <div class="panel-body">
+          <p>
+            {{data.description}}
+          </p>
+      </div>
     </div>
   </div>
 </div>

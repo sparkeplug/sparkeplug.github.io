@@ -3,8 +3,10 @@
 
   angular.module("prowarenessApp")
     .controller("widgetController",["$scope","widgetService",function($scope,widgetService){
+
           widgetService.getWidgetData().then(function(response){
             $scope.widgetData = response.data;
+            console.log($scope.widgetData);
           },function(error){
 
           });
