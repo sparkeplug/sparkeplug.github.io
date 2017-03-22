@@ -1,7 +1,7 @@
 var config = {
   "restApi":{
     "widget-data":{
-      "url":"https://challenge.hexiacloud.com/api/challenge1/list.json",
+      "url":"//challenge.hexiacloud.com/api/challenge1/list.json",
       "method":"GET"
     }
   }
