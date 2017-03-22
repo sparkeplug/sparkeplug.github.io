@@ -73,7 +73,7 @@ a:hover
     border: 2px solid darkgrey;
     box-shadow: 2px 2px 10px black;
     transform: scale(1.005,1.02);
-  -webkit-transition: all 2s;
+    -webkit-transition: all 2s;
     transition: all 0.2s;
     transition-timing-function: ease-in-out;
 }
@@ -84,7 +84,7 @@ a:hover
 
 #accordion-widgetData .panel-default{
   border: 1px solid lightgrey;
- -webkit-transition: all 2s;
+  -webkit-transition: all 2s;
    transition: all 0.2s;
    transition-timing-function: ease-in-out;
 }
