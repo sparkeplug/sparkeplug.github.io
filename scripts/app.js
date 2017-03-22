@@ -10,8 +10,5 @@ var config = {
 (function() {
   'use strict';
 
-  angular.module("prowarenessApp",[])
-    .controller("appController",["$rootscope","$scope",function($rootscope,$scope){
-
-    }]);
+  angular.module("prowarenessApp",["prowarenessApp.widget"]);
 })();

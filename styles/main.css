@@ -45,6 +45,11 @@ a:hover
   transition-duration: 0.2s;
 }
 
+.slide.ng-enter, .slide.ng-leave {
+  -webkit-transition:2s linear all;
+  transition:2s linear all;
+}
+
 .img-crop{
     width:40px;
     height: 40px;
@@ -58,6 +63,21 @@ a:hover
     -ms-border-radius: 20%;
     -o-border-radius: 20%;
     border-radius: 20%;
+}
+
+.panel-default{
+  -webkit-transition: all 2s;
+    transition: all 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+.panel-default:hover {
+    box-shadow: 1px 1px 10px grey;
+    transform: scale(1.02,1.05);
+}
+
+.panel-defaut:click{
+    transform: scale(1.02,1.05);
 }
 
 .center-vertical{

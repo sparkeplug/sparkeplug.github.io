@@ -1,0 +1,41 @@
+<div class="panel-group" id="accordion-{{widgetType}}">
+  <div class="panel panel-default" ng-repeat="data in data">
+    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion-{{widgetType}}" href="#collapse-{{widgetType}}-{{$index}}">
+      <div ng-if="data.type === 'text'" id="row-image" class="make-inline center-vertical img-crop" style="background-image: url('../../images/icons/001-text.svg');"></div>
+      <div ng-if="data.type === 'image'" id="row-image" class="make-inline center-vertical img-crop" style="background-image: url('../../images/icons/002-picture.svg');"></div>
+      <div ng-if="data.type === 'link'" id="row-image" class="make-inline center-vertical img-crop" style="background-image: url('../../images/icons/003-chains.svg');"></div>
+      <h4 id="widget-heading" ng-if="data.type === 'text'" class="make-inline">Text</h4>
+      <h4 id="widget-heading" ng-if="data.type === 'image'" class="make-inline">{{data.name}}</h4>
+      <h4 id="widget-heading" ng-if="data.type === 'link'" class="make-inline">Link</h4>
+      <div id="icons" class="pull-right center-vertical">
+        <img class="icon-size margin" src="../../images/icons/002-rubbish-bin.svg" alt="delete" ng-click="deleteRow({event:$event,scope:this,flag:widgetType})"/>
+        <img ng-if="widgetType === 'pinnedItems'" class="icon-size border" src="../../images/icons/remove-location.svg" alt="Unpin" ng-click="pinRow({event:$event,scope:this,flag:widgetType})"/>
+        <img ng-if="widgetType === 'widgetData'" class="icon-size border" src="../../images/icons/001-push-pin.svg" alt="pin" ng-click="pinRow({event:$event,scope:this,flag:widgetType})"/>
+      </div>
+    </div>
+    <div id="collapse-{{widgetType}}-{{$index}}" class="panel-collapse collapse">
+      <div class="panel-body">
+          <div class="w-image" ng-if="data.type === 'image'">
+            <img src="{{data.href}}" alt="Image unavailable" />
+          </div>
+          <div class="w-text" ng-if="data.type === 'text'">
+            <p>
+              {{data.body}}
+            </p>
+          </div>
+          <div class="w-link" ng-if="data.type === 'link'">
+            <p>
+              {{data.description}}
+            </p>
+            <a href="{{data.href}}"><strong>{{data.href}}</strong></a>
+          </div>
+          <h5 class="pull-left"><strong>- Updated on: </strong>{{widgetDate(data.timestamp) | date:'yyyy:MM:dd HH:MM'}}h</h5>
+          <div class="pull-right">
+            <button class="btn btn-default" type="button" name="delete" ng-click="deleteRow({event:$event,scope:this,flag:widgetType})">Delete</button>
+            <button class="btn btn-default" type="button" name="pin" ng-if="widgetType === 'widgetData'" ng-click="pinRow({event:$event,scope:this,flag:widgetType})">Pin</button>
+            <button class="btn btn-default" type="button" name="Unpin" ng-if="widgetType === 'pinnedItems'" ng-click="pinRow({event:$event,scope:this,flag:widgetType})">UnPin</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

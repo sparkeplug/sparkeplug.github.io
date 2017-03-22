@@ -1,5 +1,5 @@
 {
-  "name": "prowareness",
+  "name": "prowareness-task",
   "description": "Build a small UI page which displays the contents as given in task",
   "main": "index.html",
   "authors": [
